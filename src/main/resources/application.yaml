@@ -1,9 +1,15 @@
 spring:
   application:
     name: hefsharding
-  datasource:
-    username: orm_user
-    password: orm2024ps
-    url: jdbc:mysql://localhost:3306/orm_test?useSSL=false&serverTimezone=UTC&characterEncoding=utf8&useUnicode=true
+  sharding:
+    datasources:
+      ds0:
+        username: orm_user
+        password: orm2024ps
+        url: jdbc:mysql://localhost:3306/orm_test01?useSSL=false&serverTimezone=UTC&characterEncoding=utf8&useUnicode=true
+      ds1:
+        username: orm_user
+        password: orm2024ps
+        url: jdbc:mysql://localhost:3306/orm_test02?useSSL=false&serverTimezone=UTC&characterEncoding=utf8&useUnicode=true
 mybatis:
   mapper-locations: classpath:mapper/**/*.xml

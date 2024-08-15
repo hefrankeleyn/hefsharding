@@ -1,6 +1,7 @@
 package io.github.hefrankeleyn.hefsharding;
 
 import com.google.common.base.Strings;
+import io.github.hefrankeleyn.hefsharding.core.HefShardingProperties;
 import io.github.hefrankeleyn.hefsharding.demo.User;
 import io.github.hefrankeleyn.hefsharding.demo.UserDao;
 import jakarta.annotation.Resource;
