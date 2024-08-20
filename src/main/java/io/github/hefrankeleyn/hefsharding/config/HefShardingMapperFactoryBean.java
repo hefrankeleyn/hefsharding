@@ -1,6 +1,8 @@
-package io.github.hefrankeleyn.hefsharding.core;
+package io.github.hefrankeleyn.hefsharding.config;
 
-import io.github.hefrankeleyn.hefsharding.demo.User;
+import io.github.hefrankeleyn.hefsharding.core.HefShardingContext;
+import io.github.hefrankeleyn.hefsharding.core.HefShardingResult;
+import io.github.hefrankeleyn.hefsharding.demo.model.User;
 import org.apache.ibatis.mapping.BoundSql;
 import org.apache.ibatis.mapping.MappedStatement;
 import org.apache.ibatis.session.Configuration;

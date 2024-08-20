@@ -1,4 +1,4 @@
-package io.github.hefrankeleyn.hefsharding.demo;
+package io.github.hefrankeleyn.hefsharding.demo.model;
 
 import com.google.common.base.MoreObjects;
 

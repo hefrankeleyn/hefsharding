@@ -1,4 +1,4 @@
-package io.github.hefrankeleyn.hefsharding.core;
+package io.github.hefrankeleyn.hefsharding.mybatis;
 
 import org.apache.ibatis.executor.statement.StatementHandler;
 import org.apache.ibatis.mapping.BoundSql;
@@ -8,7 +8,6 @@ import org.apache.ibatis.plugin.Invocation;
 import org.apache.ibatis.plugin.Signature;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Component;
 
 import java.lang.reflect.InvocationTargetException;
 import java.sql.Connection;
@@ -17,7 +16,6 @@ import java.sql.Connection;
  * @Date 2024/8/15
  * @Author lifei
  */
-@Component
 @Intercepts({
         @Signature(type = StatementHandler.class, method = "prepare",
                 args = {Connection.class, Integer.class})

@@ -1,10 +1,10 @@
-package io.github.hefrankeleyn.hefsharding;
+package io.github.hefrankeleyn.hefsharding.demo;
 
 import com.google.common.base.Strings;
-import io.github.hefrankeleyn.hefsharding.core.HefShardingAutoConfiguration;
-import io.github.hefrankeleyn.hefsharding.core.HefShardingMapperFactoryBean;
-import io.github.hefrankeleyn.hefsharding.demo.User;
-import io.github.hefrankeleyn.hefsharding.demo.UserDao;
+import io.github.hefrankeleyn.hefsharding.config.HefShardingAutoConfiguration;
+import io.github.hefrankeleyn.hefsharding.config.HefShardingMapperFactoryBean;
+import io.github.hefrankeleyn.hefsharding.demo.dao.UserDao;
+import io.github.hefrankeleyn.hefsharding.demo.model.User;
 import jakarta.annotation.Resource;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.ApplicationRunner;
@@ -44,8 +44,8 @@ public class HefshardingApplication {
                 User updateUser = userDao.findById(user.getId());
                 System.out.println("====> findById updateUser: " + updateUser);
                 // 删除
-//                int delete = userDao.delete(user.getId());
-//                System.out.println("===> delete: " + delete);
+                int delete = userDao.delete(user.getId());
+                System.out.println("===> delete: " + delete);
             }
 
 

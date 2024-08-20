@@ -1,5 +1,6 @@
-package io.github.hefrankeleyn.hefsharding.demo;
+package io.github.hefrankeleyn.hefsharding.demo.dao;
 
+import io.github.hefrankeleyn.hefsharding.demo.model.User;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper

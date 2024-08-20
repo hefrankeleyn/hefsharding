@@ -1,4 +1,4 @@
-package io.github.hefrankeleyn.hefsharding.core;
+package io.github.hefrankeleyn.hefsharding.config;
 
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.Maps;

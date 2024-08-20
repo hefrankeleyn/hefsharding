@@ -2,15 +2,15 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="io.github.hefrankeleyn.hefsharding.demo.UserDao">
+<mapper namespace="io.github.hefrankeleyn.hefsharding.demo.dao.UserDao">
 
-    <resultMap id="rm_User" type="io.github.hefrankeleyn.hefsharding.demo.User">
+    <resultMap id="rm_User" type="io.github.hefrankeleyn.hefsharding.demo.model.User">
         <result column="id" property="id"/>
         <result column="name" property="name"/>
         <result column="age" property="age"/>
     </resultMap>
 
-    <insert id="insert" parameterType="io.github.hefrankeleyn.hefsharding.demo.User">
+    <insert id="insert" parameterType="io.github.hefrankeleyn.hefsharding.demo.model.User">
         insert into user(id,name,age) values(#{id}, #{name}, #{age})
     </insert>
 
@@ -18,7 +18,7 @@
         select id, name, age from user where id=#{id}
     </select>
 
-    <update id="update" parameterType="io.github.hefrankeleyn.hefsharding.demo.User">
+    <update id="update" parameterType="io.github.hefrankeleyn.hefsharding.demo.model.User">
         update user set name=#{name}, age=#{age} where id=#{id}
     </update>
 
