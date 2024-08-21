@@ -9,12 +9,14 @@ import com.google.common.base.MoreObjects;
 public class HefShardingResult {
 
     private String targetDataSourceName;
+    private String targetSqlStatement;
 
     public HefShardingResult() {
     }
 
-    public HefShardingResult(String targetDataSourceName) {
+    public HefShardingResult(String targetDataSourceName, String targetSqlStatement) {
         this.targetDataSourceName = targetDataSourceName;
+        this.targetSqlStatement = targetSqlStatement;
     }
 
     public String getTargetDataSourceName() {
@@ -25,10 +27,19 @@ public class HefShardingResult {
         this.targetDataSourceName = targetDataSourceName;
     }
 
+    public String getTargetSqlStatement() {
+        return targetSqlStatement;
+    }
+
+    public void setTargetSqlStatement(String targetSqlStatement) {
+        this.targetSqlStatement = targetSqlStatement;
+    }
+
     @Override
     public String toString() {
         return MoreObjects.toStringHelper(HefShardingResult.class)
                 .add("targetDataSourceName", targetDataSourceName)
+                .add("targetSqlStatement", targetSqlStatement)
                 .toString();
     }
 }

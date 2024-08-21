@@ -11,6 +11,18 @@ spring:
         username: orm_user
         password: orm2024ps
         url: jdbc:mysql://localhost:3306/orm_test02?useSSL=false&serverTimezone=UTC&characterEncoding=utf8&useUnicode=true
+    tables:
+      user:
+        # 实际的表
+        actualDataNodes: ds0.user1,ds0.user2,ds0.user3,ds1.user1,ds1.user2,ds1.user3
+        # 分库策略
+        databaseStrategy:
+          shardingColumn: id
+          algorithmExpression: ds${id % 2}
+        # 分表策略
+        tableStrategy:
+          shardingColumn: id
+          algorithmExpression: user${id % 3}
 mybatis:
   mapper-locations: classpath:mapper/**/*.xml
 logging:

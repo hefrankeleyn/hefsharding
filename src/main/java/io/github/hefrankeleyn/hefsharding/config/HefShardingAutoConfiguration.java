@@ -1,6 +1,8 @@
 package io.github.hefrankeleyn.hefsharding.config;
 
 import io.github.hefrankeleyn.hefsharding.datasource.HefShardingDataSource;
+import io.github.hefrankeleyn.hefsharding.engine.HefShardingEngine;
+import io.github.hefrankeleyn.hefsharding.engine.impl.HefStandardShardingEngine;
 import io.github.hefrankeleyn.hefsharding.mybatis.HefSqlStatementInterceptor;
 import org.apache.ibatis.plugin.Interceptor;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
@@ -25,5 +27,10 @@ public class HefShardingAutoConfiguration {
     @Bean
     public Interceptor statementHandlerInterceptor() {
         return new HefSqlStatementInterceptor();
+    }
+
+    @Bean
+    public HefShardingEngine hefShardingEngine(HefShardingProperties hefShardingProperties) {
+        return new HefStandardShardingEngine(hefShardingProperties);
     }
 }
