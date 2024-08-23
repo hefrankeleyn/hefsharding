@@ -18,11 +18,22 @@ spring:
         # 分库策略
         databaseStrategy:
           shardingColumn: id
-          algorithmExpression: ds${id % 2}
+          algorithmExpression: ds$->{id % 2}
         # 分表策略
         tableStrategy:
           shardingColumn: id
-          algorithmExpression: user${id % 3}
+          algorithmExpression: user$->{id % 3}
+      order:
+        # 实际的表
+        actualDataNodes: ds0.order0,ds0.order1,ds1.order0,ds1.order1
+        # 分库策略
+        databaseStrategy:
+          shardingColumn: uid
+          algorithmExpression: ds$->{uid % 2}
+        # 分表策略
+        tableStrategy:
+          shardingColumn: id
+          algorithmExpression: order$->{id % 2}
 mybatis:
   mapper-locations: classpath:mapper/**/*.xml
 logging:
