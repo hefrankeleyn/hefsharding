@@ -7,5 +7,5 @@ public interface HefShardingStrategy {
 
     List<String> getShardingColumns();
 
-    String doSharding(List<String> availableTargetNames, String logicTableName, Map<String, Object> shardingParams);
+    String doSharding(Map<String, Object> shardingParams);
 }

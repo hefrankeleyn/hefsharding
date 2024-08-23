@@ -28,7 +28,7 @@ public class HefHashShardingStrategy implements HefShardingStrategy {
     }
 
     @Override
-    public String doSharding(List<String> availableTargetNames, String logicTableName, Map<String, Object> shardingParams) {
+    public String doSharding(Map<String, Object> shardingParams) {
         // 处理表达式，纠正写法, 因为spring表达式的写法和groovy 写法，冲突
         String expression = InlineExpressionParser.handlePlaceHolder(algorithmExpression);
         InlineExpressionParser parser = new InlineExpressionParser(expression);

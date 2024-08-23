@@ -14,7 +14,7 @@ spring:
     tables:
       user:
         # 实际的表
-        actualDataNodes: ds0.user1,ds0.user2,ds0.user3,ds1.user1,ds1.user2,ds1.user3
+        actualDataNodes: ds0.user0,ds0.user1,ds0.user2,ds1.user0,ds1.user1,ds1.user2
         # 分库策略
         databaseStrategy:
           shardingColumn: id

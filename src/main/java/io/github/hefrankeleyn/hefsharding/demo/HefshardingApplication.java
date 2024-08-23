@@ -44,8 +44,8 @@ public class HefshardingApplication {
                 User updateUser = userDao.findById(user.getId());
                 System.out.println("====> findById updateUser: " + updateUser);
                 // 删除
-                int delete = userDao.delete(user.getId());
-                System.out.println("===> delete: " + delete);
+//                int delete = userDao.delete(user.getId());
+//                System.out.println("===> delete: " + delete);
             }
 
 
